@@ -59,3 +59,14 @@ To facilitate above requirements, each Application is provided with three versio
 
 #### Successful processing
 
+~~~
+{
+  "status": "success",
+  "fullapplicationname": "hel api testing (self)",
+  "applicationname": "helapitestingself",
+  "shortapplicationname": "helapitessel",  
+  "sitecode": "hel",
+  "specifier": "self",
+  "application": "api testing"
+}
+~~~
