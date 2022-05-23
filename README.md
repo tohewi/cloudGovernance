@@ -12,8 +12,9 @@ Following patterns are defined:
 - \<application name\>
 - \<application name\> (specifier)
 
-*Sitecode* refers to Business Location where application is used.
-*Specifier* provides additional information on the scope or use.
+where
+- *Sitecode* refers to Business Location where application is used.
+- *Specifier* provides additional information on the scope or use.
   
 Both Sitecode and Specifier are also managed as attributes and target is to not to store them in the name. This is primarily caused by lack of UI development on the portfolio tools hence the pieces of information are added to the name itself.
 Caveat of having this additional information in the name is that the name becomes tighly coupled to location and organization and changing application name is fairly tedious task if (when) organizations or locations change.
