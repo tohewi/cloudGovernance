@@ -7,10 +7,10 @@ This naming API handles Application naming within Application Portfolio. It ensu
 Applications in this context mean "solutions" that support business capabilities. They are seldom just a piece of software, but more complex entities consisting of different technologies. Applications are logical level entities and are deployed as Environments on infrastructure of some kind.
 
 Following patterns are defined:
-- Sitecode <application name>
-- Sitecode <application name> (specifier)
-- <application name>
-- <application name> (specifier)
+- Sitecode \<application name\>
+- Sitecode \<application name\> (specifier)
+- \<application name\>
+- \<application name\> (specifier)
 
 *Sitecode* refers to Business Location where application is used.
 *Specifier* provides additional information on the scope or use.
