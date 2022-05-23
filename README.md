@@ -13,16 +13,17 @@ Following patterns are defined:
 - \<application name\> (specifier)
 
 where
-- *Sitecode* refers to Business Location where application is used.
-- *Specifier* provides additional information on the scope or use.
+- *Sitecode* refers to Business Location where application is used. *Global* application lacks sitecode.
+- *Specifier* provides additional information on the scope or use. Specifier is optional.
   
-Both Sitecode and Specifier are also managed as attributes and target is to not to store them in the name. This is primarily caused by lack of UI development on the portfolio tools hence the pieces of information are added to the name itself.
+Both *Sitecode* and *Specifier* are also managed as attributes and target is to not to store them in the name. This is primarily caused by lack of UI development on the portfolio tools hence the pieces of information are added to the name itself.
 Caveat of having this additional information in the name is that the name becomes tighly coupled to location and organization and changing application name is fairly tedious task if (when) organizations or locations change.
   
-Note: Patterns themselves can be modified/customized in the code. They are the base line patterns in the context where API development has been happening.
+Note: Patterns themselves can be modified/customized in the code. They are the baseline patterns in the standards context where API development has been happening.
+
 ### Application name modifiers
-Typically, there are words that should not be included in Application names. Those words can be for example company name, organization name, certain technology, etc.
-Such words may be completely blocked from the Application name or there may be an abbreviation that is to be used.
+Typically, there are words that should not be included in Application names. Those words can be, for example: company name, organization name, certain technology, etc.
+Such words may be completely blocked from the Application name or there may be an abbreviation that is to be used. Abbreviations can also be made static in how they are processed by the short name function *Get-ShortName*.
 
 #### Filter or Replace
 There is a separate function *Get-FilteredName* for which a hash table with 'findthis:replacewith' word pairs can be provided. 'Replace with' can also be empty string if a word should be completely removed. Typical usage is to replace words with common acronyms.
