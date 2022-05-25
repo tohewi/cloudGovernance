@@ -2,7 +2,12 @@
 This repo will host Cloud Governance APIs and automats. First API in the family of APIs is "Portfolio Naming" API. It ensures Applications added into Application Portfolio are named in a consistent manner and that names of existing portfolio applications can be validated prior to triggering Cloud Onboarding Automation.
 
 ![image](https://user-images.githubusercontent.com/82122655/170344225-db0c22af-12ea-42a1-90c9-908369718b70.png)
-<br>Conseptual architecture of Cloud Governance solution
+<br>*Conseptual architecture of Cloud Governance solution.*
+
+APIs are primarily located on the API layer (#2) in the diagram above. They are consumed by the Automats as well as the User Facing Digital Services (#1 in the diagram) that provide functionality like Service Request management for Cloud. Also, YAML pipelines and Terraform Infrastucture code use naming details to ensure all layers of Cloud Infrastructure is automatically named in consistent manner.
+
+![image](https://user-images.githubusercontent.com/82122655/170359029-8c1437c6-e6f3-433a-adc9-2521942b0ba6.png)
+<br>*Screenshot from the Digital Service layer from step of creating new Platform Application while Onboarding to Cloud.*
 
 ## Naming API
 This naming API handles Application naming within Application Portfolio. It ensures naming meets set Patterns and that naming meets technical requirements.
@@ -10,7 +15,7 @@ This naming API handles Application naming within Application Portfolio. It ensu
 Technical requirements originate from the systems that are needed during the lifecycle of the Application, for example Active Directory, Azure Devops and Azure. Target is also to ensure that different IT Domains have the right information available to them regarding the applications and the lifecycle process.
 
 ![image](https://user-images.githubusercontent.com/82122655/170342778-9c0c9954-2373-4a43-aa0f-b89258fd3cff.png)
-<br>A subset of IT Domains needing consistent view to porfolio data.
+<br>*A subset of IT Domains needing consistent view to porfolio data.*
 
 ### Application naming Patterns
 Applications in this context mean "solutions" that support business capabilities. They are seldom just a piece of software, but more complex entities consisting of different technologies. Applications are logical level entities and are deployed as Environments on infrastructure of some kind.
@@ -49,7 +54,7 @@ Function Initialize-Maps {
 }
 ~~~
 
-#### Keep do not shortened
+#### Keep do not shorten
 There may also be words that are not to be shortened in the short name function. They are added to 'keeperList' array. Note that due to Active Directory CN limitations, it may be necessary to have additional failsafe methods to not to run into problems with too many words in a single name that can't be shortened.
 
 ### Technical requirements
