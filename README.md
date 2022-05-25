@@ -1,8 +1,17 @@
 # cloudGovernance
-Cloud Governance APIs and automats.
+This repo will host Cloud Governance APIs and automats. First API in the family of APIs is "Portfolio Naming" API. It ensures Applications added into Application Portfolio are named in a consistent manner and that names of existing portfolio applications can be validated prior to triggering Cloud Onboarding Automation.
+
+![image](https://user-images.githubusercontent.com/82122655/170344225-db0c22af-12ea-42a1-90c9-908369718b70.png)
+<br>Conseptual architecture of Cloud Governance solution
 
 ## Naming API
 This naming API handles Application naming within Application Portfolio. It ensures naming meets set Patterns and that naming meets technical requirements.
+
+Technical requirements originate from the systems that are needed during the lifecycle of the Application, for example Active Directory, Azure Devops and Azure. Target is also to ensure that different IT Domains have the right information available to them regarding the applications and the lifecycle process.
+
+![image](https://user-images.githubusercontent.com/82122655/170342778-9c0c9954-2373-4a43-aa0f-b89258fd3cff.png)
+<br>A subset of IT Domains needing consistent view to porfolio data.
+
 ### Application naming Patterns
 Applications in this context mean "solutions" that support business capabilities. They are seldom just a piece of software, but more complex entities consisting of different technologies. Applications are logical level entities and are deployed as Environments on infrastructure of some kind.
 
