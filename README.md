@@ -8,8 +8,21 @@ APIs are primarily located on the API layer (#2) in the diagram above. They are 
 
 ![image](https://user-images.githubusercontent.com/82122655/170359029-8c1437c6-e6f3-433a-adc9-2521942b0ba6.png)
 <br>*Screenshot from the Digital Service layer from step of creating new Platform Application while Onboarding to Cloud.*
+## Runtime
+APIs are running as Azure Functions at the moment.
 
-## Naming API
+## API Overview
+There are several APIs in the cloudGovernance family. They can be categorised into two main categories:
+- Portfolio APIs
+- Cloud Framework APIs
+
+The first published API is a portfolio API for checking name conformance and availability and it will be followed by api to handle portfolio registration and data updates.
+
+![image](https://user-images.githubusercontent.com/82122655/170575787-4c559f65-5ea2-42e5-a8b4-2cf212105540.png)
+<br>*APIs in Portfolio API category*
+
+# Portfolio APIs
+## Naming API (applicationNames)
 This naming API handles Application naming within Application Portfolio. It ensures naming meets set Patterns and that naming meets technical requirements.
 
 Technical requirements originate from the systems that are needed during the lifecycle of the Application, for example Active Directory, Azure Devops and Azure. Target is also to ensure that different IT Domains have the right information available to them regarding the applications and the lifecycle process.
@@ -84,3 +97,5 @@ To facilitate above requirements, each Application is provided with three versio
   "application": "api testing"
 }
 ~~~
+## Portfolio Registration and CRUD (applications)
+wip.
