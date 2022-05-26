@@ -48,6 +48,15 @@ Caveat of having this additional information in the name is that the name become
   
 Note: Patterns themselves can be modified/customized in the code. They are the baseline patterns in the standards context where API development has been happening.
 
+### Technical requirements
+Technical requirements originate from the technologies in use
+- On-premises AD: class specific character and length limits
+- Azure DevOps: project and component naming limitations on non-compliant characters
+- Azure: resource naming limitations, as in storage account with character and length limitations
+- Application portfolio systems: character set limitations that prevent/cause issues in data replication
+- Human aspect: a readable and understandable name for the Application helps application users to communicate with Application Support and people tend to invent names for apps that they use rather than a noncomprehensable string.
+
+
 ### Application name modifiers
 Typically, there are words that should not be included in Application names. Those words can be, for example: company name, organization name, certain technology, etc.
 Such words may be completely blocked from the Application name or there may be an abbreviation that is to be used. Abbreviations can also be made static in how they are processed by the short name function *Get-ShortName*.
@@ -70,22 +79,20 @@ Function Initialize-Maps {
 #### Keep do not shorten
 There may also be words that are not to be shortened in the short name function. They are added to 'keeperList' array. Note that due to Active Directory CN limitations, it may be necessary to have additional failsafe methods to not to run into problems with too many words in a single name that can't be shortened.
 
-### Technical requirements
-Technical requirements originate from the technologies in use
-- On-premises AD: class specific character and length limits
-- Azure DevOps: project and component naming limitations on non-compliant characters
-- Azure: resource naming limitations, as in storage account with character and length limitations
-- Application portfolio systems: character set limitations that prevent/cause issues in data replication
-- Human aspect: a readable and understandable name for the Application helps application users to communicate with Application Support and people tend to invent names for apps that they use rather than a noncomprehensable string.
+### Usage
 
-### API Output
+#### API Output
 To facilitate above requirements, each Application is provided with three versions of its name
 - Full name, which equals to the name as in Application Portfolio
 - Application name, which is used in Cloud Resource containers and supports easy programmatic access
 - Short name, which is tailored to be used as application identifies in Cloud Resource Names that require short name with tight character set limitation
 
-#### Successful processing
+#### Calling applicationNames API
+~~~
+curl "https://<fqdn>/api/applicationNames?code=<authcode>&name=hel api testing (self)" -contentType 'application/json'
+~~~
 
+#### Response when Successful
 ~~~
 {
   "status": "success",
@@ -97,5 +104,6 @@ To facilitate above requirements, each Application is provided with three versio
   "application": "api testing"
 }
 ~~~
+
 ## Portfolio Registration and CRUD (applications)
 wip.
